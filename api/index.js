@@ -1,4 +1,3 @@
-// api/index.js
 const express = require("express");
 const serverless = require("serverless-http");
 const morgan = require("morgan");
@@ -19,4 +18,5 @@ app.get("/", (req, res) => {
 });
 
 // Export the serverless handler for Vercel
-module.exports.handler = serverless(app);
+module.exports = serverless(app);
+// Vercel expects `handler` to be the serverless function
