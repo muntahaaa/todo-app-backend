@@ -1,5 +1,6 @@
 const express = require("express");
 const morgan = require("morgan");
+const pool = require("./config/db");
 require("dotenv").config();
 
 const todoRoutes = require("./routes/todos");
@@ -20,8 +21,8 @@ app.get("/", (req, res) => {
 });
 
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`Server running on port ${PORT}`);
+// });
 
 module.exports = app;

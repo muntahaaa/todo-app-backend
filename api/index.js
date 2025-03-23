@@ -1,3 +1,4 @@
-const app = require("../server")
+const app = require("../server");
+const serverless = require("serverless-http"); // optional, makes life easier
 
-module.exports = app;
+module.exports = serverless(app);
