@@ -1,9 +1,7 @@
 const { Pool } = require("pg");
 const dotenv = require("dotenv");
-const { database } = require("pg/lib/defaults");
 
 dotenv.config();
-
 
 const pool = new Pool({
   host: process.env.DB_HOST,
@@ -21,14 +19,7 @@ const pool = new Pool({
   family: 4 
 });
 
-// pool.on("connect", () => {
-//   console.log("DB Connected");
-// });
-
-// pool.on("error",(err)=>{
-//     console.error("Error occured" + err);
-// })
-
+// Test the connection without closing the pool
 (async () => {
   try {
     const client = await pool.connect();
@@ -37,9 +28,7 @@ const pool = new Pool({
     client.release();
   } catch (err) {
     console.error('Connection error:', err);
-  } finally {
-    pool.end();
   }
 })();
 
-module.exports = pool; 
+module.exports = pool;
