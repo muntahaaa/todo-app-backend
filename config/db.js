@@ -28,6 +28,7 @@ const pool = new Pool({
 // pool.on("error",(err)=>{
 //     console.error("Error occured" + err);
 // })
+
 (async () => {
   try {
     const client = await pool.connect();
