@@ -3,7 +3,7 @@ const serverless = require("serverless-http");
 const morgan = require("morgan");
 const pool = require("../config/db")
 
-const todoRoutes = require("../routes/todos");
+const todoRoutes = require("../routes/todoRoutes");
 
 const app = express();
 
